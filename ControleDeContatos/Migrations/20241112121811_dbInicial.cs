@@ -5,7 +5,7 @@
 namespace ControleDeContatos.Migrations
 {
     /// <inheritdoc />
-    public partial class CriandoTabelaContatos : Migration
+    public partial class dbInicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
