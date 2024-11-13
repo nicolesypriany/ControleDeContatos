@@ -37,7 +37,7 @@ namespace ControleDeContatos.Repositorio
 
             if (usuarioDb == null) throw new Exception("Houve um erro na atualização do usuario!");
 
-            usuarioDb.Name = usuario.Name;
+            usuarioDb.Nome = usuario.Nome;
             usuarioDb.Email = usuario.Email;
             usuarioDb.Login = usuario.Login;
             usuarioDb.Perfil = usuario.Perfil;
@@ -59,6 +59,11 @@ namespace ControleDeContatos.Repositorio
             _context.SaveChanges();
 
             return true;
+        }
+
+        public UsuarioModel BuscarPorLogin(string login)
+        {
+            return _context.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
         }
     }
 }
